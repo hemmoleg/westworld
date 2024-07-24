@@ -1,0 +1,9 @@
+@import '../../styles.scss';
+
+#wordsCollumn{
+    position: absolute;
+
+    transition-property: all;
+    transition-duration: $moveTime;
+    transition-timing-function: $easingFunction;
+}

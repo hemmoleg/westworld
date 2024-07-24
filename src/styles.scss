@@ -1,0 +1,28 @@
+/* Global Styles */
+
+$moveTime: 0.5s;
+$easingFunction: cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+//$easingFunction: linear;
+
+* {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #616161;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    background-color: #253642;
+    overflow: hidden;
+}
+
+.container {
+  
+}
+
+router-outlet + *  {
+  padding: 0 16px;
+}
+

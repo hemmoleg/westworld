@@ -1,0 +1,74 @@
+
+$borderWidth: 2px;
+$marginTop: 1em;
+$insertedMarginTop: 0.3em;
+$insertedHeight: 4em;
+$duration: 0.3s;
+
+
+.wordBox{
+    width: 6em;
+    height: 1.4em;
+    border-width: $borderWidth;
+    border-style: solid;
+    border-color: #5c7384;
+    border-radius: 5px;
+    margin-top: $marginTop;
+    padding-left: 2px;
+    padding-right: 2px;
+
+    display: flex;
+    justify-content: space-between;
+
+    text-align: center;
+    font-weight: bold;
+
+
+    transition: background $duration ease-in-out;
+    transition: border-color $duration ease-in-out;
+
+    span{
+        line-height: 1.3em;
+        transition: color $duration ease-in-out;
+        display: inline-block;
+        vertical-align: middle;
+        color: #5c7384;
+    }
+
+    &.inserted span{
+        display: inline-block;
+        vertical-align: middle;
+        flex-grow: 5;
+        line-height: $insertedHeight;
+        color: #3bffff;
+        
+    }
+
+    &.selected{
+        background: #3bffff;
+        border-color: #3bffff;
+        
+        span{
+            display: inline-block;
+            vertical-align: middle;
+            color: #162627;
+        }
+    }
+}
+
+.inserted{
+    opacity: 1;
+    height: 0px;
+    margin-top: 0px;
+    border-width: 0px;
+    animation-name: insert;
+    animation-duration: $duration;
+    animation-fill-mode: forwards;
+    background: #162627;
+}
+
+@keyframes insert{
+    15%{margin-top: $insertedMarginTop;}
+    50%{margin-top: $insertedMarginTop; border-width: $borderWidth;}
+    100%{opacity: 1; height: $insertedHeight; margin-top: $insertedMarginTop; border-width: $borderWidth;}
+}
